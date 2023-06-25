@@ -29,6 +29,7 @@
     "@babel/preset-typescript": "^7.22.5",
     "@babel/runtime": "^7.22.5",
     "@reduxjs/toolkit": "^1.9.5",
+    "@shopify/polaris": "^11.2.2",
     "@types/babel__core": "^7.20.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
