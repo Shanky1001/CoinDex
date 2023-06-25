@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PFXNQGL');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-01M9JE5L5J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-01M9JE5L5J');
+    </script>
+    <!-- Document Title-->
+    <title>Coindex | Homepage</title>
+    <!-- Set character encoding for the document-->
+    <meta charset="UTF-8" />
+    <!-- Meta Description-->
+    <meta name="description" content="Coindex App powered by RapidAPI." />
+    <meta name="author" content="Shashank Rai" />
+    <meta name="keywords" content="Coindex, Crypto, CryptoCurrency" />
+
+    <!-- To run web application in full-screen-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Status Bar Style (see Supported Meta Tags below for available values)-->
+    <!-- Has no effect unless you have the previous meta tag-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- for IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Viewport for responsive web design-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1677ff" />
+
+    <style>
+        .loading-overlay {
+            position: fixed;
+            background: #fff;
+            width: 100%;
+            height: calc(100% + 90px);
+            z-index: 1040;
+            display: none;
+            margin-top: -90px;
+        }
+
+        .loading-container {
+            position: fixed;
+            top: 50%;
+            z-index: 1050;
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .loading-container .loader-body {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+            position: relative;
+            background: #1677ff;
+            box-sizing: border-box;
+            animation: flipX 1s linear infinite;
+        }
+
+        @keyframes flipX {
+            0% {
+                transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+            }
+
+            50% {
+                transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);
+            }
+        }
+
+        body.load {
+            overflow: hidden;
+        }
+
+        body.load .loading-container,
+        body.load .loading-overlay {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="load">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFXNQGL" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="loading-overlay"></div>
+    <div class="loading-container" id="js-loading-container">
+        <div class="loader-body"></div>
+    </div>
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+</body>
+
+</html>
