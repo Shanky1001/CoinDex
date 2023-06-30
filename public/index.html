@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PFXNQGL');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PFXNQGL");
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-01M9JE5L5J"></script>
-    <script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-01M9JE5L5J"></script> -->
+    <!-- <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-01M9JE5L5J');
-    </script>
+    </script> -->
     <!-- Document Title-->
     <title>Coindex | Homepage</title>
     <!-- Set character encoding for the document-->
@@ -46,73 +52,77 @@
     <meta name="theme-color" content="#1677ff" />
 
     <style>
-        .loading-overlay {
-            position: fixed;
-            background: #fff;
-            width: 100%;
-            height: calc(100% + 90px);
-            z-index: 1040;
-            display: none;
-            margin-top: -90px;
+      .loading-overlay {
+        position: fixed;
+        background: #fff;
+        width: 100%;
+        height: calc(100% + 90px);
+        z-index: 1040;
+        display: none;
+        margin-top: -90px;
+      }
+
+      .loading-container {
+        position: fixed;
+        top: 50%;
+        z-index: 1050;
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+      }
+
+      .loading-container .loader-body {
+        width: 48px;
+        height: 48px;
+        display: inline-block;
+        position: relative;
+        background: #1677ff;
+        box-sizing: border-box;
+        animation: flipX 1s linear infinite;
+      }
+
+      @keyframes flipX {
+        0% {
+          transform: perspective(200px) rotateX(0deg) rotateY(0deg);
         }
 
-        .loading-container {
-            position: fixed;
-            top: 50%;
-            z-index: 1050;
-            text-align: center;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
+        50% {
+          transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
         }
 
-        .loading-container .loader-body {
-            width: 48px;
-            height: 48px;
-            display: inline-block;
-            position: relative;
-            background: #1677ff;
-            box-sizing: border-box;
-            animation: flipX 1s linear infinite;
+        100% {
+          transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);
         }
+      }
 
-        @keyframes flipX {
-            0% {
-                transform: perspective(200px) rotateX(0deg) rotateY(0deg);
-            }
+      body.load {
+        overflow: hidden;
+      }
 
-            50% {
-                transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
-            }
-
-            100% {
-                transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);
-            }
-        }
-
-        body.load {
-            overflow: hidden;
-        }
-
-        body.load .loading-container,
-        body.load .loading-overlay {
-            display: block;
-        }
+      body.load .loading-container,
+      body.load .loading-overlay {
+        display: block;
+      }
     </style>
-</head>
+  </head>
 
-<body class="load">
+  <body class="load">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFXNQGL" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PFXNQGL"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="loading-overlay"></div>
     <div class="loading-container" id="js-loading-container">
-        <div class="loader-body"></div>
+      <div class="loader-body"></div>
     </div>
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-</body>
-
+  </body>
 </html>

@@ -1,24 +1,16 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import BackToTopButton from "components/BackToTopButton";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 
-import {
-	styled,
-	useTheme,
-	Theme,
-	CSSObject,
-	createTheme,
-	ThemeProvider,
-} from "@mui/material/styles";
+import {styled, Theme, CSSObject, createTheme, ThemeProvider} from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+import MuiAppBar, {AppBarProps as MuiAppBarProps} from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
@@ -29,75 +21,48 @@ import ListItemText from "@mui/material/ListItemText";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MenuIcon from "@mui/icons-material/Menu";
+import {Stack} from "@mui/material";
 
 const LayoutWrapper = () => {
-	// const theme = useTheme();
-	const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
-	const handleDrawerOpen = () => {
-		setOpen(true);
-	};
+  const handleDrawer = () => {
+    setOpen(!open);
+  };
 
-	const handleDrawerClose = () => {
-		setOpen(false);
-	};
-
-	return (
-		<ThemeProvider theme={theme}>
-			<div className="main_wrapper" style={{ display: "flex" }}>
-				<Drawer variant="permanent" open={open}>
-					<DrawerHeader>
-						<IconButton onClick={handleDrawerClose}>
-							{theme.direction === "rtl" ? (
-								<ChevronRightIcon />
-							) : (
-								<ChevronLeftIcon />
-							)}
-						</IconButton>
-					</DrawerHeader>
-					<Divider />
-					<SideBar />
-				</Drawer>
-				<Box
-					component="main"
-					className="main_wrapper-right"
-					style={{ flexGrow: 1, padding: 3 }}
-				>
-					<AppBar position="fixed" open={open}>
-						<Toolbar>
-							<Typography sx={{
-									marginRight: 5,
-									...(open && { display: "none" }),
-								}}>
-								Coindex
-							</Typography>
-							<IconButton
-								color="inherit"
-								aria-label="open drawer"
-								onClick={handleDrawerOpen}
-								edge="start"
-								sx={{
-									marginRight: 5,
-									...(open && { display: "none" }),
-								}}
-							>
-								<MenuIcon />
-							</IconButton>
-							<Typography variant="h6" noWrap component="div">
-								Mini variant drawer
-							</Typography>
-						</Toolbar>
-					</AppBar>
-					{/* <NavBar /> */}
-					<div className="mx-4 mt-4">
-						<Outlet />
-						<BackToTopButton />
-					</div>
-					<Footer />
-				</Box>
-			</div>
-		</ThemeProvider>
-	);
+  return (
+    <ThemeProvider theme={theme}>
+      <div className="main_wrapper" style={{display: "flex"}}>
+        <AppBar position="fixed" open={open}>
+          <Toolbar>
+            <NavBar />
+          </Toolbar>
+        </AppBar>
+        <Drawer variant="permanent" open={open} sx={{position: "relative"}}>
+          <Stack
+            direction={"row"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            width={"100%"}
+            sx={{position: "absolute", bottom: "80px"}}>
+            <IconButton onClick={handleDrawer} sx={{backgroundColor: "#222", "&:hover": {backgroundColor: "#333"}}}>
+              {!open ? <ChevronRightIcon color="primary" /> : <ChevronLeftIcon color="primary" />}
+            </IconButton>
+          </Stack>
+          <Divider />
+          <SideBar />
+        </Drawer>
+        <Box component="main" className="main_wrapper-right" sx={{flexGrow: 1, padding: 3}}>
+          {/* <NavBar /> */}
+          <div className="mx-4 mt-4">
+            <Outlet />
+            <BackToTopButton />
+          </div>
+          <Footer />
+        </Box>
+      </div>
+    </ThemeProvider>
+  );
 };
 
 export default LayoutWrapper;
@@ -105,81 +70,83 @@ export default LayoutWrapper;
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
-	width: drawerWidth,
-	backgroundColor: theme.palette.primary.main,
-	transition: theme.transitions.create("width", {
-		easing: theme.transitions.easing.sharp,
-		duration: theme.transitions.duration.enteringScreen,
-	}),
-	overflowX: "hidden",
+  width: drawerWidth,
+  top: "40px",
+  backgroundColor: theme.palette.primary.light,
+  transition: theme.transitions.create("width", {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.enteringScreen,
+  }),
+  overflowX: "hidden",
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
-	transition: theme.transitions.create("width", {
-		easing: theme.transitions.easing.sharp,
-		duration: theme.transitions.duration.leavingScreen,
-	}),
-	overflowX: "hidden",
-	width: `calc(${theme.spacing(7)} + 1px)`,
-	[theme.breakpoints.up("sm")]: {
-		width: `calc(${theme.spacing(8)} + 1px)`,
-	},
+  transition: theme.transitions.create("width", {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  overflowX: "hidden",
+  top: "40px",
+  width: `calc(${theme.spacing(7)} + 1px)`,
+  [theme.breakpoints.up("sm")]: {
+    width: `calc(${theme.spacing(8)} + 1px)`,
+  },
 });
 
-const DrawerHeader = styled("div")(({ theme }) => ({
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "flex-end",
-	padding: theme.spacing(0, 1),
-	// necessary for content to be below app bar
-	...theme.mixins.toolbar,
-}));
+// const DrawerHeader = styled("div")(({theme}) => ({
+//   display: "flex",
+//   alignItems: "center",
+//   justifyContent: "flex-end",
+//   padding: theme.spacing(0, 1),
+//   // necessary for content to be below app bar
+//   ...theme.mixins.toolbar,
+// }));
 
 interface AppBarProps extends MuiAppBarProps {
-	open?: boolean;
+  open?: boolean;
 }
 
 const AppBar = styled(MuiAppBar, {
-	shouldForwardProp: (prop) => prop !== "open",
-})<AppBarProps>(({ theme, open }) => ({
-	zIndex: theme.zIndex.drawer + 1,
-	transition: theme.transitions.create(["width", "margin"], {
-		easing: theme.transitions.easing.sharp,
-		duration: theme.transitions.duration.leavingScreen,
-	}),
-	...(open && {
-		marginLeft: drawerWidth,
-		backgroundColor: theme.palette.primary.main,
-		width: `calc(100% - ${drawerWidth}px)`,
-		transition: theme.transitions.create(["width", "margin"], {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.enteringScreen,
-		}),
-	}),
+  shouldForwardProp: (prop) => prop !== "open",
+})<AppBarProps>(({theme, open}) => ({
+  zIndex: theme.zIndex.drawer + 1,
+  transition: theme.transitions.create(["width", "margin"], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    marginLeft: drawerWidth,
+    backgroundColor: theme.palette.primary.main,
+    width: "100%",
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  }),
 }));
 
 const Drawer = styled(MuiDrawer, {
-	shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-	width: drawerWidth,
-	flexShrink: 0,
-	whiteSpace: "nowrap",
-	boxSizing: "border-box",
-	...(open && {
-		...openedMixin(theme),
-		"& .MuiDrawer-paper": openedMixin(theme),
-	}),
-	...(!open && {
-		...closedMixin(theme),
-		"& .MuiDrawer-paper": closedMixin(theme),
-	}),
+  shouldForwardProp: (prop) => prop !== "open",
+})(({theme, open}) => ({
+  width: drawerWidth,
+  flexShrink: 0,
+  whiteSpace: "nowrap",
+  boxSizing: "border-box",
+  ...(open && {
+    ...openedMixin(theme),
+    "& .MuiDrawer-paper": openedMixin(theme),
+  }),
+  ...(!open && {
+    ...closedMixin(theme),
+    "& .MuiDrawer-paper": closedMixin(theme),
+  }),
 }));
 
 const theme = createTheme({
-	palette: {
-		primary: {
-			main: "#FFF ",
-			light: "#DDD",
-		},
-	},
+  palette: {
+    primary: {
+      main: "#DDD",
+      light: "#EEE",
+    },
+  },
 });
