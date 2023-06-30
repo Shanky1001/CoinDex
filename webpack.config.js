@@ -21,12 +21,13 @@ module.exports = () => {
 					use: ['babel-loader']
 				},
 				{
-					test: /\.css$/,
-					use: ['style-loader', 'css-loader']
+					test: /\.css$/i,
+					exclude: /node_modules/,
+					use: ['style-loader', 'css-loader','postcss-loader']
 				},
 				{
 					test: /\.(scss|sass)$/,
-					use: ['style-loader', 'css-loader', 'sass-loader']
+					use: ['style-loader', 'css-loader','sass-loader']
 				},
 				{
 					test: /\.(?:ico|gif|png|jpg|jpeg)$/i,

@@ -2,7 +2,7 @@ import React from 'react'
 
 const SideBar = () => {
   return (
-    <div>SideBar</div>
+    <div style={{width:"250px"}} className='sidebar_wrapper'>SideBar</div>
   )
 }
 
