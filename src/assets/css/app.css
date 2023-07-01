@@ -41,6 +41,7 @@ a {
   font-size: 26px;
   color: black;
   font-weight: 600;
+  margin-block: 16px;
 }
 
 .action_btn {
@@ -54,6 +55,11 @@ a {
   min-height: calc(100vh - 65px);
 }
 
+.main_wrapper-right {
+  width: 100%;
+  min-height: 100vh;
+}
+
 .drawer-open {
   width: 240px;
 }
@@ -62,15 +68,21 @@ a {
   width: 65px;
 }
 
-.drawer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+.drawer_wrapper{
   top: 65px;
   z-index: 1;
   background-color: var(--bgColor);
 	padding: 5px;
   position: relative;
+  min-height: calc(100vh - 65px);
+}
+.drawer {
+  top: 65px;
+  z-index: 1;
+  background-color: var(--bgColor);
+	padding: 5px;
+  position: fixed;
+  min-height: calc(100vh - 65px);
 }
 
 .drawer_button {
@@ -85,8 +97,6 @@ a {
   align-content: center;
   background-color: var(--bgColor);
 }
-
-
 
 
 /* Navbar styles */

@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const CryptoCard = ({ coin }: any) => {
 	return (
-		<Card className="hover:shadow-[0_3px_15px_rgba(22,_41,_124,_0.1)] transition-all duration-300 crypto_card">
+		<Card elevation={6} className="crypto_card">
 			<CardHeader
 				title={<Typography variant="h3" sx={{fontSize:"16px",fontWeight:"600"}}>{coin.name}</Typography>}
 				avatar={

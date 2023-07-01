@@ -5,10 +5,10 @@ import { useGetCoinsQuery } from "redux/features/crypto.feature";
 import { useGetFeedsQuery } from "redux/features/news.feature";
 import { readableNumber } from "./helper";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import SavingsIcon from '@mui/icons-material/Savings';
-import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
-import LocalConvenienceStoreIcon from '@mui/icons-material/LocalConvenienceStore';
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import SavingsIcon from "@mui/icons-material/Savings";
+import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
+import LocalConvenienceStoreIcon from "@mui/icons-material/LocalConvenienceStore";
 import News from "./News";
 import CryptocurrenciesList from "components/CryptocurrenciesList";
 
@@ -30,7 +30,7 @@ const HomePage = () => {
 		>
 			{Boolean(feeds && data) && (
 				<div className="homepage_wrapper">
-					<h1 className="mb-5 wrapper_title">Global Crypto Stats</h1>
+					<h1 className="wrapper_title">Global Crypto Stats</h1>
 					<div className="mb-10 md:grid grid-cols-3 stats_card_wrapper">
 						<div className="col-span-1 m-3">
 							<Stats
@@ -76,13 +76,15 @@ const HomePage = () => {
 							/>
 						</div>
 					</div>
-					
-					<h3 className="mt-5 wrapper_title">
-						Top 10 Cryptocurrencies in the world
+
+					<h3 className="wrapper_title">
+						Top 12 Cryptocurrencies in the world
 					</h3>
 					<CryptocurrenciesList coins={data.data.coins} limit={12} />
 
-					<h3 className="mt-5 wrapper_title">Latest Cryptocurrencies News</h3>
+					<h3 className="wrapper_title">
+						Latest Cryptocurrencies News
+					</h3>
 					<News feeds={feeds.value} />
 				</div>
 			)}

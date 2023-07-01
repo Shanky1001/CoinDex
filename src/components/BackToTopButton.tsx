@@ -1,31 +1,25 @@
 import { Fab } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import React, { useEffect, useState,useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
-const BackToTopButton = () => {
-	const [show, setShow] = useState(false);
-
-  const handleClick = useCallback(()=>{
-    window.scrollTo({top:0})
-  },[window])
-
-	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			if (window.screenX > 1000) {
-				setShow(true);
-			} else {
-				setShow(false);
-			}
-		});
-		return () => {
-			window.removeEventListener("scroll", () => {});
-		};
+const BackToTopButton = ({ show }: any) => {
+	const handleClick = useCallback(() => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	}, [window]);
 
 	return (
 		<>
 			{show && (
-				<Fab disabled aria-label="like" onClick={handleClick}>
+				<Fab
+					size="large"
+					aria-label="back-to-top"
+					onClick={handleClick}
+					sx={{
+						position: "fixed",
+						right: "50px",
+						top: "80vh",
+					}}
+				>
 					<KeyboardArrowUpIcon />
 				</Fab>
 			)}

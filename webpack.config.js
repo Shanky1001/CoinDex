@@ -53,6 +53,9 @@ module.exports = () => {
       }),
       new CleanWebpackPlugin(),
     ],
+    cache: {
+      type: 'filesystem',
+    },
     devServer: {
       historyApiFallback: {index: "/", disableDotRule: true},
       port: 3000,

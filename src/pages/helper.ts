@@ -1,3 +1,13 @@
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
+dayjs.extend(relativeTime);
+
+export const timeToX = (date: Date | string): string => {
+	return dayjs().to(dayjs(date));
+}
+
+
 export const readableNumber = (number:number) => {
     if (number >= 1000000000) {
         return (number / 1000000000).toFixed(2).toString() + " B";
@@ -11,3 +21,4 @@ export const readableNumber = (number:number) => {
         return Number.isInteger(number) ? number.toString() : number.toFixed(3).toString();
       }
 }
+

@@ -59,6 +59,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "devDependencies": {
+    "dayjs": "^1.11.9",
     "postcss": "^8.4.24"
   }
 }

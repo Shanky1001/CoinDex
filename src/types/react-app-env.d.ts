@@ -78,7 +78,9 @@ interface Feed {
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-type AutoCompleteOption = { value: string; label: string; reset: Coin };
+type AutoCompleteOption = {
+  title: any; value: string; label: string; reset: Coin 
+};
 
 interface HistoryTimestamp {
 	price: string;
