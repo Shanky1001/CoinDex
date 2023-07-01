@@ -5,11 +5,11 @@
 @import "../fonts/ConcertOne/concert.css";
 
 :root {
-  font-family: "Monteserrat", "sans-serif" !important;
+	font-family: "Monteserrat", "sans-serif" !important;
 }
 
 body {
-  font-family: "Monteserrat", "sans-serif" !important;
+	font-family: "Monteserrat", "sans-serif" !important;
 }
 
 li,
@@ -25,9 +25,28 @@ b,
 button,
 div,
 a {
-  font-family: "Monteserrat", sans-serif !important;
+	font-family: "Monteserrat", sans-serif !important;
 }
 
 .title {
-  font-family: "Concert One", "Monteserrat" !important;
+	font-family: "Concert One", "Monteserrat" !important;
+}
+
+.sidebar_wrapper a {
+	width: 100%;
+	padding: 5px;
+}
+
+.sidebar_wrapper a h6 {
+  font-size: 14px;
+}
+
+.sidebar_wrapper a.active {
+	background-color: red;
+	border-radius: 5px;
+  color: #FFF !important;
+}
+
+.sidebar_wrapper a.active svg {
+  color: #FFF !important;
 }

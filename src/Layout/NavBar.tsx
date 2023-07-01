@@ -40,7 +40,7 @@ const NavBar = () => {
           options={options}
           loading={loading}
           isOptionEqualToValue={(option, value) => option.title === value.title}
-          getOptionLabel={(option) => option.title}
+          getOptionLabel={(option:any) => option.title}
           renderInput={(params) => (
             <TextField
               sx={{border: "1px solid #333", borderRadius: "4px"}}

@@ -139,3 +139,7 @@ interface ExchangeCurrency {
 	uuid: string;
 	rank: number;
 }
+
+interface SideBarProps {
+	open:boolean;
+}

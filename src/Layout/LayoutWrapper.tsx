@@ -50,7 +50,7 @@ const LayoutWrapper = () => {
             </IconButton>
           </Stack>
           <Divider />
-          <SideBar />
+          <SideBar open={open} />
         </Drawer>
         <Box component="main" className="main_wrapper-right" sx={{flexGrow: 1, padding: 3}}>
           {/* <NavBar /> */}
@@ -92,15 +92,6 @@ const closedMixin = (theme: Theme): CSSObject => ({
     width: `calc(${theme.spacing(8)} + 1px)`,
   },
 });
-
-// const DrawerHeader = styled("div")(({theme}) => ({
-//   display: "flex",
-//   alignItems: "center",
-//   justifyContent: "flex-end",
-//   padding: theme.spacing(0, 1),
-//   // necessary for content to be below app bar
-//   ...theme.mixins.toolbar,
-// }));
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
