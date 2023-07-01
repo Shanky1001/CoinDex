@@ -12,7 +12,7 @@ const newsApi = createApi({
 				'X-RapidAPI-Host': process.env.REACT_APP_NEWS_RAPIDAPI_HOST || '',
 			},
 		}),
-		{ maxRetries: 3 }
+		{ maxRetries: 2 }
 	),
 
 	endpoints: (builder) => ({

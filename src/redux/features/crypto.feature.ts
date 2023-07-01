@@ -12,7 +12,7 @@ const cryptoApi = createApi({
 				'X-RapidAPI-Host': process.env.REACT_APP_CRYPTO_RAPIDAPI_HOST || '',
 			},
 		}),
-		{ maxRetries: 6 }
+		{ maxRetries: 3 }
 	),
 
 	endpoints: (builder) => ({

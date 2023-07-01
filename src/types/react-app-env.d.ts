@@ -35,7 +35,7 @@ interface Coin {
 
 	numberOfMarkets: number;
 	numberOfExchanges: number;
-	'24hVolume': string;
+	"24hVolume": string;
 	marketCap: string;
 	fullyDilutedMarketCap: string;
 	price: string;
@@ -76,7 +76,7 @@ interface Feed {
 	datePublished: string;
 }
 
-type MenuItem = Required<MenuProps>['items'][number];
+type MenuItem = Required<MenuProps>["items"][number];
 
 type AutoCompleteOption = { value: string; label: string; reset: Coin };
 
@@ -105,11 +105,6 @@ interface AsyncPageLoadProps {
 	children: React.JSX;
 }
 
-interface HelmetProps {
-	title: string;
-	description: string;
-}
-
 interface MarketCurrency {
 	uuid: string;
 	rank: number;
@@ -124,7 +119,7 @@ interface MarketCurrency {
 	recommended: true;
 	filters: {};
 	price: string;
-	'24hVolume': string;
+	"24hVolume": string;
 }
 
 interface ExchangeCurrency {
@@ -141,5 +136,11 @@ interface ExchangeCurrency {
 }
 
 interface SideBarProps {
-	open:boolean;
+	open: boolean;
+}
+
+interface StatsProps {
+	title: string;
+	value: number | string;
+	icon: React.ReactElement;
 }
