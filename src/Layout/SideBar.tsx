@@ -4,9 +4,10 @@ import HomeIcon from "@mui/icons-material/Home";
 import MultilineChartIcon from "@mui/icons-material/MultilineChart";
 import AnalyticsIcon from "@mui/icons-material/Analytics";
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
-import { Box, Stack, IconButton, Typography } from "@mui/material";
+import {  Stack, IconButton, Typography } from "@mui/material";
 
 const SideBar = ({ open }: SideBarProps) => {
+  
 	const items: MenuItem[] = [
 		{
 			label: "Home",
@@ -35,14 +36,13 @@ const SideBar = ({ open }: SideBarProps) => {
 			alignItems={"flex-start"}
 			gap={2}
 			sx={{
-				width: `${open ? "235px" : "60px"}`,
+				width: "100%",
 				marginTop: "30px",
 				marginInline: "auto",
 			}}
 			className="sidebar_wrapper"
 		>
 			{items.map((val) => {
-				let active: boolean;
 				return (
 					<NavLink
 						to={val.key}

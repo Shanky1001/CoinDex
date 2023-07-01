@@ -6,10 +6,13 @@
 
 :root {
 	font-family: "Monteserrat", "sans-serif" !important;
+  --bgColor:#DDD;
+  --mainColor:#EEE;
 }
 
 body {
 	font-family: "Monteserrat", "sans-serif" !important;
+  background-color: var(--mainColor);
 }
 
 li,
@@ -32,6 +35,65 @@ a {
 	font-family: "Concert One", "Monteserrat" !important;
 }
 
+/* Layout styles */
+
+.main_wrapper {
+  display: flex;
+  min-height: calc(100vh - 65px);
+}
+
+.drawer-open {
+  width: 240px;
+}
+
+.drawer-closed {
+  width: 65px;
+}
+
+.drawer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 65px;
+  z-index: 1;
+  background-color: var(--bgColor);
+	padding: 5px;
+  position: relative;
+}
+
+.drawer_button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  align-content: center;
+  background-color: var(--bgColor);
+}
+
+
+
+
+/* Navbar styles */
+
+.navbar_wrapper {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: 65px;
+  left: 0;
+  right: 0;
+  padding-inline: 32px;
+  border-bottom: 1px solid cadetblue;
+  z-index: 1000;
+  background-color: var(--bgColor) ;
+}
+
+
+/* Sidebar styles start */
 .sidebar_wrapper a {
 	width: 100%;
 	padding: 5px;
@@ -50,3 +112,5 @@ a {
 .sidebar_wrapper a.active svg {
   color: #FFF !important;
 }
+
+/* Sidebar style ends */
