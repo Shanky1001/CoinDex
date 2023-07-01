@@ -1,10 +1,11 @@
 import React from "react";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Loader = () => {
 	return (
 		<div className="flex justify-center items-center h-96">
-			{/* <Spin size="large" tip="Loading" /> */}
-            <h1>Loading.....</h1>
+            <CircularProgress color="success" size={50} variant="indeterminate" value={100} />
+			<h5>Loading ....</h5>
 		</div>
 	);
 };
