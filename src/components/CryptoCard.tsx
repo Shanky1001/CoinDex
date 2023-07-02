@@ -35,7 +35,7 @@ const CryptoCard = ({ coin }: any) => {
 				</p>
 				<p className="flex justify-between my-1 ">
 					<span className="text-lg font-medium"> Daily Change </span>
-					<span>{readableNumber(parseFloat(coin.change))}</span>
+					<span className="font-bold" style={{color:`${parseInt(coin.change) < -0 ? "red" : "green"}`}}>{readableNumber(parseFloat(coin.change))}</span>
 				</p>
 			</CardContent>
 			<CardActions sx={{ width: "100%",display:"flex",alignItems:"center",justifyContent:"space-between" }}>

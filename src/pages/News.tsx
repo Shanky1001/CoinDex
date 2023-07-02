@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@mui/material";
 import noImage from "../assets/images/no_image.jpg";
-import PersonIcon from '@mui/icons-material/Person';
-import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
+import PersonIcon from "@mui/icons-material/Person";
+import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
 import { timeToX } from "./helper";
 import React from "react";
 
@@ -16,7 +16,7 @@ const News = ({ feeds = [] }: any) => {
 						title={feed.name}
 						rel="noreferrer"
 					>
-						<Card elevation={3} sx={{minHeight:"300px"}}>
+						<Card elevation={3} sx={{ minHeight: "300px" }}>
 							<CardContent>
 								<div className="flex">
 									<h2 className="font-bold text-lg">
