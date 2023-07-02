@@ -156,7 +156,6 @@ const ReferenceCurrency = () => {
 					<h2 className="wrapper_title">Fiat Reference Currencies</h2>
 					<TableContainer component={Paper}>
 						<Table
-							size="small"
 							sx={{ minWidth: 650 }}
 							aria-label="simple table"
 						>
