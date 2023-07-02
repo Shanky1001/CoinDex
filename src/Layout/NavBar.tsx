@@ -28,7 +28,6 @@ const NavBar = () => {
 			);
 		} else {
 			setOptions([]);
-			console.log(error);
 		}
 	}, [data]);
 

@@ -167,3 +167,14 @@ a {
 }
 
 /* Currencies styles */
+
+
+/* Reference Currencies */
+
+.table_header {
+  background-color: var(--secondary_text);
+}
+
+.table_row:hover{
+  background-color: var(--bgColor);
+}
