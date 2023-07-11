@@ -5,16 +5,24 @@
 @import "../fonts/ConcertOne/concert.css";
 
 :root {
-	--bgColor: #ddd;
-	--mainColor: #fff;
-	--primary_text: #000;
-	--secondary_text: #999;
-	font-family: "Monteserrat", "sans-serif" !important;
+  --darkBlue: #1a85fb;
+  --cream: #f5f6fa;
+  --lightBlue: #e5f1ff;
+  --darkGray: #a5b3cd;
+  --nightBlue: #141736;
+  --blackish: #090d1f;
+  --bgColor: #fff;
+  --white: #fff;
+  --black: #000;
+  /* --bgColor: #ddd;
+  --mainColor: #fff;
+  --primary_text: #000;
+  --secondary_text: #999; */
 }
 
 body {
-	background-color: var(--mainColor);
-	font-family: "Monteserrat", "sans-serif" !important;
+  background-color: var(--bgColor);
+  font-family: "Monteserrat", "sans-serif" !important;
 }
 
 li,
@@ -30,118 +38,127 @@ b,
 button,
 div,
 a {
-	font-family: "Monteserrat", sans-serif !important;
+  font-family: "Monteserrat", sans-serif !important;
 }
 
 .title {
-	font-family: "Concert One", "Monteserrat" !important;
+  font-family: "Concert One", "Monteserrat" !important;
 }
 
 .wrapper_title {
-	color: black;
-	font-size: 26px;
-	font-weight: 600;
-	margin-block: 16px;
+  color: black;
+  font-size: 26px;
+  font-weight: 600;
+  margin-block: 16px;
 }
 
 .action_btn {
-	color: #000 !important;
+  color: #000 !important;
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
 }
 
 .btn {
-	background-color: var(--primary_text);
-	border: 1px solid var(--bgColor);
-	border-radius: 50px;
-	color: var(--mainColor);
-	min-width: 130px;
-	padding: 10px 20px;
+  background-color: var(--darkBlue);
+  border: 1px solid var(--bgColor);
+  border-radius: 50px;
+  color: var(--white);
+  min-width: 130px;
+  padding: 10px 20px;
 }
 
 /* Layout styles */
 
 .main_wrapper {
-	display: flex;
-	min-height: calc(100vh - 65px);
+  display: flex;
+  min-height: calc(100vh - 65px);
 }
 
 .main_wrapper-right {
-	min-height: calc(100vh - 65px);
-	width: 100%;
-	overflow-y: auto;
-	scroll-behavior: smooth;
+  min-height: calc(100vh - 65px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  width: 100%;
 }
 
 .drawer-open {
-	width: 240px;
+  width: 240px;
 }
 
 .drawer-closed {
-	width: 65px;
+  width: 65px;
 }
 
 .drawer_wrapper {
-	background-color: var(--bgColor);
-	min-height: calc(100vh - 65px);
-	padding: 5px;
-	position: relative;
-	z-index: 1;
+  background-color: var(--bgColor);
+  min-height: calc(100vh - 65px);
+  padding: 5px;
+  position: relative;
+  z-index: 1;
 }
 
 .drawer {
-	background-color: var(--bgColor);
-	min-height: calc(100vh - 65px);
-	padding: 5px;
-	position: fixed;
-	top: 65px;
-	z-index: 1;
+  background-color: var(--bgColor);
+  border-right: 1px solid var(--lightBlue);
+  left: 0;
+  min-height: calc(100vh - 65px);
+  padding: 5px;
+  position: fixed;
+  top: 65px;
+  z-index: 1;
 }
 
 .drawer_button {
-	align-content: center;
-	align-items: center;
-	background-color: var(--bgColor);
-	bottom: 0;
-	display: flex;
-	height: 60px;
-	justify-content: center;
-	left: 0;
-	position: absolute;
-	right: 0;
+  align-content: center;
+  align-items: center;
+  background-color: var(--bgColor);
+  bottom: 0;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
 }
 
 /* Navbar styles */
 
 .navbar_wrapper {
-	align-items: center;
-	background-color: var(--bgColor);
-	border-bottom: 1px solid cadetblue;
-	display: flex;
-	height: 65px;
-	left: 0;
-	padding-inline: 32px;
-	position: fixed;
-	right: 0;
-	z-index: 1000;
+  align-items: center;
+  background-color: var(--bgColor);
+  border-bottom: 1px solid var(--lightBlue);
+  display: flex;
+  height: 65px;
+  left: 0;
+  padding-inline: 32px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
 }
 
 /* Sidebar styles start */
 .sidebar_wrapper a {
-	padding: 5px;
-	width: 100%;
+  padding: 5px;
+  width: 100%;
 }
 
 .sidebar_wrapper a h6 {
-	font-size: 14px;
+  color: var(--darkGray);
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.sidebar_wrapper a.active {
-	background-color: red;
-	border-radius: 5px;
-	color: #fff !important;
+.sidebar_wrapper a svg {
+  color: var(--darkGray) !important;
+}
+
+.sidebar_wrapper a.active h6 {
+  color: var(--darkBlue) !important;
 }
 
 .sidebar_wrapper a.active svg {
-	color: #fff !important;
+  color: var(--darkBlue) !important;
 }
 
 /* Sidebar style ends */
@@ -149,30 +166,51 @@ a {
 /* Home Page styles */
 
 .homepage_wrapper {
-	margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 .homepage_wrapper > h1 {
-	color: black;
-	font-size: 26px;
-	font-weight: 600;
+  color: black;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.stats_wrapper {
+  background-color: var(--bgColor);
+  border: 1px solid var(--lightBlue);
+  border-radius: 0.8rem;
+  max-width: 300px !important;
+  padding: 16px 40px;
 }
 
 .stats_wrapper h4 {
-	color: var(--secondary_text);
-	font-size: 16px;
-	font-weight: 600;
+  color: var(--darkGray);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .stats_wrapper h5 {
-	color: var(--primary_text);
-	font-size: 24px;
-	font-weight: 600;
+  color: var(--black);
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .stats_card_wrapper svg {
-	color: var(--primary_text);
-	font-size: 1.5em !important;
+  color: var(--blackish);
+  font-size: 2.75em !important;
+}
+
+.crypto_card {
+  background-color: var(--white) !important;
+}
+
+.card_action {
+  width: 100%;
+  border-top: 1px solid var(--darkGray);
+}
+
+.news_card {
+  background-color: var(--white) !important;
 }
 
 /* Currencies styles */
@@ -180,9 +218,9 @@ a {
 /* Reference Currencies */
 
 .table_header {
-	background-color: var(--secondary_text);
+  background-color: var(--darkGray);
 }
 
 .table_row:hover {
-	background-color: var(--bgColor);
+  background-color: var(--lightBlue);
 }

@@ -7,8 +7,8 @@
   "main": "src/index.tsx",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "webpack --config webpack.config.js",
-    "dev": "webpack server --config webpack.config.js",
+    "build": "webpack --mode=production",
+    "dev": "webpack serve",
     "lint": "eslint --fix \"./src/**/*.{tsx,ts,js,jsx,json,css,scss,md}\"",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },

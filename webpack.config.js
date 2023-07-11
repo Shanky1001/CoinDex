@@ -11,6 +11,7 @@ module.exports = () => {
       path: path.resolve(__dirname, "dist"),
       filename: "bundle.js",
       publicPath: "/",
+      clean: true,
     },
     mode: "development",
     module: {
@@ -23,6 +24,7 @@ module.exports = () => {
         {
           test: /\.css$/i,
           exclude: /node_modules/,
+          include: path.resolve(__dirname, "src"),
           use: ["style-loader", "css-loader", "postcss-loader"],
         },
         {
@@ -40,6 +42,7 @@ module.exports = () => {
       ],
     },
     resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
       extensions: [".tsx", ".ts", ".js", ".jsx"],
       plugins: [new TsconfigPathsPlugin()],
     },
@@ -54,7 +57,11 @@ module.exports = () => {
       new CleanWebpackPlugin(),
     ],
     cache: {
-      type: 'filesystem',
+      type: "filesystem",
+    },
+    optimization: {
+      // runtimeChunk: true,
+      // runtimeChunk: "single",
     },
     devServer: {
       historyApiFallback: {index: "/", disableDotRule: true},
